@@ -1,30 +1,27 @@
-<script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import Lista from "./components/Lista.vue";
+import Tareas from "./components/Tareas.vue";
+import DimensionComponente from "./components/DimensionComponente.vue";
+
+import { ref } from "vue";
+
+const currentComponent = ref("Lista");
+
+const componentes = {
+  Lista: Lista,
+  Tareas: Tareas,
+  Dimensiones: DimensionComponente,
+};
 </script>
 
 <template>
   <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+    <h1>Trabajo Práctico N° 4</h1>
+    <button @click="currentComponent = 'Lista'">Ver Lista</button>
+    <button @click="currentComponent = 'Tareas'">Ver Tareas</button>
+    <button @click="currentComponent = 'Dimensiones'">Ver Dimensiones</button>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+    <component :is="componentes[currentComponent]" />
+  </div>
+</template>
+<style></style>

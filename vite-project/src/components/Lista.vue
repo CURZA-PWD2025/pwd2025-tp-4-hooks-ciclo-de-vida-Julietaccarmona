@@ -1,21 +1,24 @@
 <script setup>
 import { ref, onMounted } from "vue";
+import profesionesData from "../resources/profesiones";
 
-const elementos = ref([]);
+const profesiones = ref([]);
 
 onMounted(() => {
   setTimeout(() => {
-    // Simula datos cargados luego de 3 segundos
-    elementos.value = ["Elemento 1", "Elemento 2", "Elemento 3"];
+    profesiones.value = profesionesData;
   }, 3000);
 });
 </script>
 
 <template>
   <div>
-    <h2>Lista de elementos</h2>
+    <h2>Lista de profesiones</h2>
     <ul>
-      <li v-for="(item, index) in elementos" :key="index">{{ item }}</li>
+      <li v-for="item in profesiones" :key="item.id">
+        <strong>{{ item.nombre }}</strong
+        >: {{ item.descripcion }}
+      </li>
     </ul>
   </div>
 </template>
