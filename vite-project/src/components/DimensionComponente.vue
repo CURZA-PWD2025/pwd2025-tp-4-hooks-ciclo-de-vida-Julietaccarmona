@@ -25,3 +25,16 @@ onUnmounted(() => {
     <p>Alto: {{ height }} px</p>
   </div>
 </template>
+
+<style scoped>
+h2 {
+  color: #555454;
+}
+
+p {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+</style>

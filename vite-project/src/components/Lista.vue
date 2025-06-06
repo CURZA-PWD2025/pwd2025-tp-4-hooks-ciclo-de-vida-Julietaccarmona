@@ -25,6 +25,19 @@ onMounted(() => {
 
 <style scoped>
 h2 {
-  color: #888;
+  color: #555454;
+}
+
+ul {
+  list-style-type: none;
+  text-align: justify;
+  line-height: 2;
+}
+
+li {
+  margin: 5px 0;
+  border-style: solid;
+  padding: 10px 20px;
+  background: linear-gradient(to right, rgb(189, 189, 189), transparent);
 }
 </style>
